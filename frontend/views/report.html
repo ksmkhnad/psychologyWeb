@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Отчеты</h2>
+    <table>
+        <tr>
+            <th>Уровень</th>
+            <th>Направление</th>
+            <th>Доля (%)</th>
+            <th>Категория</th>
+            <th>Основная проблематика</th>
+        </tr>
+        <tr ng-repeat="entry in data">
+            <td>{{ entry.level }}</td>
+            <td>{{ entry.direction }}</td>
+            <td>{{ entry.percentage }}</td>
+            <td>{{ entry.category }}</td>
+            <td>{{ entry.issue }}</td>
+        </tr>
+    </table>
+</div>

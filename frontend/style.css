@@ -1,0 +1,52 @@
+/* Add your CSS styling here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 1em 0;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+main {
+    background-color: #fff;
+    padding: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label, form input, form textarea {
+    margin-bottom: 0.5em;
+}
+
+form input[type="submit"] {
+    width: 100px;
+}
