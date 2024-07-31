@@ -1,0 +1,50 @@
+<div class="container mt-4">
+    <h2>Diagnostics Data Entry</h2>
+
+    <form ng-submit="submitStudentDiagnostics()">
+        <h3>Students</h3>
+        <div class="form-group">
+            <label for="studentEmotional">Emotional Diagnostics</label>
+            <input type="checkbox" id="studentEmotional" ng-model="studentData.emotional_diagnostics">
+        </div>
+        <div class="form-group">
+            <label for="studentCognitive">Cognitive Diagnostics</label>
+            <input type="checkbox" id="studentCognitive" ng-model="studentData.cognitive_diagnostics">
+        </div>
+        <div class="form-group">
+            <label for="studentProfessional">Professional Self Diagnostics</label>
+            <input type="checkbox" id="studentProfessional" ng-model="studentData.professional_self_diagnostics">
+        </div>
+        <div class="form-group">
+            <label for="studentAbilities">Abilities Diagnostics</label>
+            <input type="checkbox" id="studentAbilities" ng-model="studentData.abilities_diagnostics">
+        </div>
+        <div class="form-group">
+            <label for="studentMonitoring">Monitoring Diagnostics</label>
+            <input type="checkbox" id="studentMonitoring" ng-model="studentData.monitoring_diagnostics">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <form ng-submit="submitTeacherDiagnostics()">
+        <h3>Teachers</h3>
+        <div class="form-group">
+            <label for="teacherEmotional">Emotional Diagnostics</label>
+            <input type="checkbox" id="teacherEmotional" ng-model="teacherData.emotional_diagnostics">
+        </div>
+        <div class="form-group">
+            <label for="teacherMonitoring">Monitoring Diagnostics</label>
+            <input type="checkbox" id="teacherMonitoring" ng-model="teacherData.monitoring_diagnostics">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <form ng-submit="submitParentDiagnostics()">
+        <h3>Parents</h3>
+        <div class="form-group">
+            <label for="parentDiagnostics">Diagnostics</label>
+            <input type="checkbox" id="parentDiagnostics" ng-model="parentData.diagnostics">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

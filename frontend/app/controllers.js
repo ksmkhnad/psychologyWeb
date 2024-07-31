@@ -1,15 +1,23 @@
-app.controller('MainCtrl', ['$scope', 'DataService', function($scope, DataService) {
-    $scope.formData = {};
+app.controller('DiagnosticsCtrl', ['$scope', 'DataService', function($scope, DataService) {
+    $scope.studentData = {};
+    $scope.teacherData = {};
+    $scope.parentData = {};
 
-    $scope.submitForm = function() {
-        DataService.addData($scope.formData).then(function(response) {
-            $scope.formData = {}; // Clear the form
+    $scope.submitStudentDiagnostics = function() {
+        DataService.addStudentDiagnostics($scope.studentData).then(function(response) {
+            $scope.studentData = {}; // Clear the form
         });
     };
-}]);
 
-app.controller('ReportCtrl', ['$scope', 'DataService', function($scope, DataService) {
-    DataService.getData().then(function(response) {
-        $scope.data = response.data;
-    });
+    $scope.submitTeacherDiagnostics = function() {
+        DataService.addTeacherDiagnostics($scope.teacherData).then(function(response) {
+            $scope.teacherData = {}; // Clear the form
+        });
+    };
+
+    $scope.submitParentDiagnostics = function() {
+        DataService.addParentDiagnostics($scope.parentData).then(function(response) {
+            $scope.parentData = {}; // Clear the form
+        });
+    };
 }]);

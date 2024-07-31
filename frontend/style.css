@@ -1,52 +1,84 @@
-/* Add your CSS styling here */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-header {
-    background-color: #f4f4f4;
-    padding: 1em 0;
-    text-align: center;
-    margin-bottom: 1em;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 1em;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #000;
-}
-
-main {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
     background-color: #fff;
-    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header Styles */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
 }
 
-form label, form input, form textarea {
-    margin-bottom: 0.5em;
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-form input[type="submit"] {
-    width: 100px;
+input[type="text"],
+input[type="number"],
+textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
 }

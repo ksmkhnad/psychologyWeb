@@ -1,12 +1,11 @@
-version: '3.8'
-
+version: '3'
 services:
-  web:
+  flask_app:
     build: ./backend
     container_name: flask_app
-    restart: always
     environment:
-      - FLASK_ENV=production
+      - FLASK_ENV=development
+      - SQLALCHEMY_DATABASE_URI=postgresql://admin:nadira@db:5432/postgres
     ports:
       - "5001:5000"
     volumes:
@@ -14,41 +13,28 @@ services:
     depends_on:
       - db
 
-  frontend:
-    build: ./frontend
-    container_name: angular_app
-    restart: always
-    ports:
-      - "4200:80"
-    volumes:
-      - ./frontend:/usr/share/nginx/html
-    depends_on:
-      - web
-
-  db:
-    image: postgres:13
-    container_name: postgres_db
-    restart: always
-    environment:
-      POSTGRES_DB: psy_service_db
-      POSTGRES_USER: psy_user
-      POSTGRES_PASSWORD: psy_pass
-    volumes:
-      - db_data:/var/lib/postgresql/data
-
   nginx:
-    image: nginx:latest
+    image: nginx:alpine
     container_name: nginx
-    restart: always
     ports:
       - "80:80"
       - "443:443"
     volumes:
+      - ./frontend:/usr/share/nginx/html
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./certs:/etc/nginx/certs
     depends_on:
-      - web
-      - frontend
+      - flask_app
+
+  db:
+    image: postgres:13
+    container_name: db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: nadira
+      POSTGRES_DB: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
 
 volumes:
   db_data:
